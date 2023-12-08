@@ -47,7 +47,7 @@ p {
     font-size: 2rem;
 }
 
-@media Only screen and (max-width: 500px)  {
+@media Only screen and (max-width: 780px)  {
     body {
         height: auto;
     }
