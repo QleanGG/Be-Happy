@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const smilingProbability = detections[0].expressions.happy;
         console.log('Smiling Probability:', smilingProbability);
 
-        if (smilingProbability > 0.5) {
+        if (smilingProbability > 0.4) {
 
           console.log('The person is smiling!');
           audio.play();
