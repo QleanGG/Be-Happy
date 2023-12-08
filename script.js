@@ -51,3 +51,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, 100);
   });
 });
+
+   // loading screen disappear 
+   document.addEventListener("DOMContentLoaded", function () {
+    let loadingwrap = document.getElementById("loading-wrap");
+    setTimeout(function () {
+        loadingwrap.style.display = "none";
+    }, 1500);
+});
