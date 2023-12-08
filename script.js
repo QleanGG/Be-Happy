@@ -1,6 +1,6 @@
 const video = document.getElementById('video');
 const audio = document.getElementById('audio');
-
+const errorMsg = document.getElementById('errorMsg');
 document.addEventListener('DOMContentLoaded', async () => {
   // Load face-api.js models
   await faceapi.nets.tinyFaceDetector.loadFromUri('./models');
@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   await faceapi.nets.faceExpressionNet.loadFromUri('./models');
 
 
- 
-
-  navigator.mediaDevices.getUserMedia({ video: {} })
-    .then((stream) => {
+  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then((stream) => {
       video.srcObject = stream;
-    });
+  })
+  .catch((error) => {
+      errorMsg.innerhtml = 'Error accessing webcam';
+      console.error("Error accessing webcam:", error);
+  });
+
 
   video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video);
@@ -57,5 +60,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     let loadingwrap = document.getElementById("loading-wrap");
     setTimeout(function () {
         loadingwrap.style.display = "none";
-    }, 1500);
+    }, 2000);
 });
