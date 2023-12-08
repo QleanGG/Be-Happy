@@ -46,3 +46,16 @@ canvas {
 p {
     font-size: 2rem;
 }
+
+@media Only screen and (max-width: 500px)  {
+    body {
+        height: auto;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    video {
+        max-width: 300px;
+        height: 400px;
+    }
+}
