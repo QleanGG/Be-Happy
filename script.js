@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
           console.log('The person is smiling!');
           audio.play();
-          document.body.style.backgroundColor = "pink";
+          document.body.style.backgroundColor = "#54fffb";
         } else {
           console.log('The person is not smiling.');
           document.body.style.backgroundColor = "gray";
